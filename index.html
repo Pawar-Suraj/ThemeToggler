@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme changer</title>
+    <style>
+        .icon{
+            height: 40px;
+            padding: 10px;
+            border-radius: 50%;
+            margin: 20px;
+            cursor: pointer;
+            background-color: white;
+        }
+        .border{
+            border: 2px solid grey;
+        }
+        .caricon-img{
+            height: 250px;
+            margin-right: 80px;
+        }
+        .container{
+            width: 70%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px auto;
+            padding: 30px;
+            font-size: 20px;
+            border-radius: 20px;
+        }
+        .theme-dark{
+            background-color: black;
+            color: white;
+
+        }
+        .theme-light{
+            background-color: white;
+        }
+
+    </style>
+</head>
+<body id="body">
+    <div>
+        <img src="sun.png" class="icon border" id="icon-light" onclick="lightMode()">
+        <img src="moon.png" class="icon" id="icon-dark" onclick="darkMode()">
+    </div>
+
+    <div class="container" id="container">
+        <img src="car-img.png" class="caricon-img">
+        <p class="text">The scent of old leather fills your nose as you climb into the driver's seat. Dust motes dance in a sunbeam that spears through the garage window. You grip the polished wood steering wheel, the engine purring to life with a satisfying rumble. What forgotten classic are you about to awaken? Ten gleaming chrome lines and a silhouette that speaks of a bygone
+             era  tell us about your dream car and the adventure that awaits!</p>
+    </div>
+
+
+    <script>
+        function lightMode(){
+            const iconLight=document.getElementById('icon-light');
+            iconLight.classList.add('border');
+
+            const iconDark=document.getElementById('icon-dark');
+            iconDark.classList.remove('border');
+
+            const themeColor=document.getElementById('body');
+            themeColor.className= "theme-light"
+        }
+
+        function darkMode(){
+            const iconDark=document.getElementById('icon-dark');
+            iconDark.classList.add('border');
+
+            const iconLight=document.getElementById('icon-light');
+            iconLight.classList.remove('border');
+
+            const themeColor=document.getElementById('body');
+            themeColor.className= "theme-dark"
+        }
+    </script>
+</body>
+</html>
